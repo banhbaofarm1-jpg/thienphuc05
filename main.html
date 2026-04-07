@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THIENPHUC05 - LoL Top Lane Profile</title>
+    <style>
+        /* Cài đặt chung & Background chuẩn Esports */
+        body {
+            background-color: #0a0a0c;
+            background-image: radial-gradient(circle at top, #1a1c23, #0a0a0c);
+            color: #c8aa6e; /* Màu vàng đồng đặc trưng của LoL client */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        /* Hiệu ứng phát sáng cho Tên */
+        .profile-header h1 {
+            font-size: 4em;
+            margin: 0 0 10px 0;
+            background: linear-gradient(to right, #c8aa6e, #f0e6d2);
+            -webkit-background-clip: text;
+            color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            animation: neon-glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes neon-glow {
+            from { text-shadow: 0 0 10px rgba(200, 170, 110, 0.5), 0 0 20px rgba(200, 170, 110, 0.5); }
+            to { text-shadow: 0 0 20px #c8aa6e, 0 0 30px #f0e6d2, 0 0 40px #f0e6d2; }
+        }
+
+        .role {
+            font-size: 1.5em;
+            color: #a09b8c;
+            margin-bottom: 40px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        /* Container chứa Flashcards */
+        .flashcard-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        /* Hiệu ứng 3D Flashcard */
+        .card {
+            width: 220px;
+            height: 400px;
+            perspective: 1000px; /* Tạo chiều sâu 3D */
+        }
+
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+            transform-style: preserve-3d;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            border-radius: 10px;
+        }
+
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            border: 2px solid #c8aa6e;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #1e2328;
+        }
+
+        .card-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s;
+        }
+
+        .card-front:hover img {
+            opacity: 0.8;
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, #1e2328, #111418);
+        }
+
+        .card-back h3 {
+            color: #f0e6d2;
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+
+        .card-back p {
+            color: #a09b8c;
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+
+        .winrate {
+            color: #0ac8b9 !important; /* Màu xanh ngọc rực rỡ */
+            font-weight: bold;
+            font-size: 1.3em !important;
+            margin-top: 15px !important;
+        }
+
+        /* Khung Thông Tin & Sở Thích */
+        .info-section {
+            background: rgba(30, 35, 40, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #c8aa6e;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            text-align: left;
+            box-shadow: 0 0 15px rgba(200, 170, 110, 0.1);
+        }
+
+        .info-section h2 {
+            text-align: center;
+            color: #f0e6d2;
+            border-bottom: 1px solid #c8aa6e;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .info-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .info-section li {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            line-height: 1.6;
+            color: #d1d1d1;
+        }
+
+        .info-section li strong {
+            color: #c8aa6e;
+        }
+
+        /* Nút Liên Kết (Links) */
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .links a {
+            display: inline-block;
+            padding: 12px 30px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 2px solid #c8aa6e;
+            color: #c8aa6e;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .links a:hover {
+            background: #c8aa6e;
+            color: #0a0a0c;
+            box-shadow: 0 0 20px #c8aa6e;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="profile-header">
+        <h1>THIENPHUC05</h1>
+        <div class="role">⚔️ Main Top Lane | Kẻ Thống Trị Đường Trên ⚔️</div>
+    </div>
+
+    <div class="flashcard-container">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Aatrox_0.jpg" alt="Aatrox">
+                </div>
+                <div class="card-back">
+                    <h3>Aatrox</h3>
+                    <p>Quỷ Kiếm Darkin</p>
+                    <p>Càn quét giao tranh</p>
+                    <p class="winrate">Tỉ lệ thắng: 65%</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Jayce_0.jpg" alt="Jayce">
+                </div>
+                <div class="card-back">
+                    <h3>Jayce</h3>
+                    <p>Người Bảo Hộ Mai Sau</p>
+                    <p>Cấu rỉa & Đè đường</p>
+                    <p class="winrate">Tỉ lệ thắng: 62%</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/loading/Gnar_0.jpg" alt="Gnar">
+                </div>
+                <div class="card-back">
+                    <h3>Gnar</h3>
+                    <p>Mắt Xích Thượng Cổ</p>
+                    <p>Mở giao tranh tổng</p>
+                    <p class="winrate">Tỉ lệ thắng: 58%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <h2>📜 Thông Tin & Sở Thích</h2>
+        <ul>
+            <li><strong>Lối chơi (Playstyle):</strong> Chuyên đè đường, kiểm soát sứ giả, thích đẩy lẻ (Split Push) để tạo khoảng trống hoặc vòng sau dịch chuyển mở giao tranh.</li>
+            <li><strong>Sở thích cá nhân:</strong> Theo dõi sát sao các giải đấu Esports chuyên nghiệp (đặc biệt cổ vũ T1), tìm hiểu kiến trúc phần cứng, thích tự tay build PC và nghiên cứu lập trình web để tối ưu các công cụ tiện ích.</li>
+            <li><strong>Châm ngôn:</strong> "Thua đường không thua thái độ, gánh team bằng tư duy chiến thuật."</li>
+            <li><strong>Mục tiêu:</strong> Cán mốc rank Đại Cao Thủ ở mùa giải năm nay.</li>
+        </ul>
+    </div>
+
+    <div class="links">
+        <a href="https://lienminh.vnggames.com/" target="_blank">🎮 Tải Game / Chơi Ngay</a>
+        <a href="#" target="_blank">🌐 Facebook Cá Nhân</a>
+        <a href="#" target="_blank">📺 Kênh Highlights</a>
+    </div>
+
+</body>
+</html>
